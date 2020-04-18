@@ -1,0 +1,9 @@
+
+#!/bin/sh
+
+NAME=main
+
+nasm -felf64 $NAME.asm
+ld $NAME.o -o $NAME
+
+./$NAME
