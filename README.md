@@ -1,4 +1,4 @@
-## RAM LAYOUT
+## RAM LAYOUT
 
 ```
 value we want to print 123
