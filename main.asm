@@ -10,14 +10,14 @@ STD_OUT equ 1
 %macro simpleWrite 0
 	mov rax, SYS_WRITE
 	mov rdi, STD_OUT
-	mov rsi, rcx ; the address of string the output, in this case it is 0x005 and it contains value of |00000000|
+	mov rsi, rcx ; the address of string to output, in this case it is 0x005 and it contains value of |00000000|
 	mov rdx, 1 ; number of bytes to be printed
 	syscall ; write it in to screen
 %endmacro
 
 section .bss
 	digitSpace resb 100 ; it is a comparator against to rcx.
-	digitSpacePos resb 8 ; it is pointer to rcx. It will hold the address of rcx.
+	digitSpacePos resb 8 ; it is a pointer to rcx. It will hold the address of rcx.
 
 section .data
 	text db "Hello, World!",10,0
@@ -26,7 +26,7 @@ section .text
 	global _start
 
 _start:
-	mov rax, 999999999999999977 ; mov 123 to rax, it is the value that will be printed on the screen
+	mov rax, 123 ; mov 123 to rax, it is the value that will be printed on the screen
 	call _printRAX
 	s_exit
 
